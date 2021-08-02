@@ -21,3 +21,5 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+apply plugin: 'application'
+mainClassName = 'com.example.HelloSpringApplication'
