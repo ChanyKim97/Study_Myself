@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "coding";
+  src: url(../fonts/BMJUA_otf.otf);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "coding";
+  background-color: #FDE8D9;
+  color: #58595B;
+}
+
+h1{
+  font-size: 64px;
+  margin-top: 75px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2{
+  font-size: 32px;
+  margin-bottom: 75px;
+  text-align: center;
+}
+
+img{
+  width: 300px;
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.menu{
+  width: 300px;
+  margin-top: 0px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.menu .name{
+  font-size: 32px;
+  text-align: center;
+  margin : 0px;
+  background-color: white;
+}
+
+.menu .des{
+  margin-top: 20px;
+  margin-bottom: 16px;
+  background-color: white;
+}
+
+.menu a{
+  text-decoration: none;
+  color:#0000EE;
+  background-color: white;
+}
+
+.link {
+  text-align: center;
+  background-color: white;
+}
