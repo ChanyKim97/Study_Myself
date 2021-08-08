@@ -1,13 +1,17 @@
 def select_stops(water_stops, capacity):
+    stoplist = []
     start = 0
     replacehere = 0
 
-    for i in range(len(water_stops)):
-        if water_stops[i] > start + capacity:
-            start = water_stops[i-1]
+    for i in range(len(water_stops)-1):
+        if water_stops[i + 1] > (start + capacity):
             replacehere += 1
+            start = water_stops[i]
+            stoplist.append(water_stops[i])
 
-    return replacehere
+    stoplist.append(water_stops[-1])
+    return stoplist
+
 
 
 
