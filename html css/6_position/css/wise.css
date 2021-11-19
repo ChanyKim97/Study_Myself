@@ -1,0 +1,29 @@
+.quote {
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-family: 'Nanum Pen Script', cursive;
+    margin-top: 75px;
+  }
+  
+  .figure {
+    margin-top: 50px;
+  }
+  
+  /*
+  이곳에 코드를 작성하세요.
+  */
+  .qmark{
+      font-size: 300%;
+      position: relative;
+  }
+
+  .qmark-op{
+      margin-right: 15px;
+      top: 20px;
+  }
+
+  .qmark-cl{
+      margin-left: 15px;
+      top:80px;
+  }
