@@ -1,6 +1,11 @@
-import { Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 
+
+ReactDOM.render(<App /> ,document.getElementById('root'));
+
+
+/*
 const WINS = {
   rock: 'scissor',
   scissor: 'paper',
@@ -17,8 +22,9 @@ function handleClick() {
   console.log('가위바위보!');
 }
 
-const me = 'rock';
-const other = 'scissor';
+const me = 'paper';
+ const other = 'scissor';
+
 
 ReactDOM.render(
   <>
@@ -30,4 +36,4 @@ ReactDOM.render(
   </>,
   document.getElementById('root')
 );
-
+*/
