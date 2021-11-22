@@ -18,3 +18,35 @@ console.log(course)
 //pop()     배열 마지막 삭제
 //unshift() 배열 1번째 추가
 //push()    배열 마지막 추가
+
+for (let element of course){
+    console.log(element);
+}
+
+for (let index in course){
+    console.log(index);
+    console.log(course[index]);
+}
+
+let votes = [
+    '이재식', '이재식', '이규하', '이규하', '이규하',
+    '이재식', '이재식', '이규하', '이규하', '이재식',
+    '이규하', '이규하', '이규하', '이규하', '이재식',
+    '이재식', '이규하', '이재식', '이재식', '이재식',
+    '이재식', '이재식', '이규하', '이규하', '이규하',
+    '이규하', '이규하', '이재식', '이규하', '이규하',
+    '이규하', '이규하', '이재식', '이규하', '이규하',
+    '이규하', '이재식', '이재식', '이재식', '이규하',
+  ];
+
+  let voteCounter = {};
+
+  for (let name of votes){
+    if (name in voteCounter) {
+        voteCounter[name]+= 1;
+    } else {
+        voteCounter[name] = 1;
+    }
+  }
+
+  
