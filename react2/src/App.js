@@ -1,36 +1,20 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import Counter from "./components/Counter";
 
 function App() {
-  const [text, setText] = useState('Before');
+  const [buttonName, setButtonName] = useState('클릭');
 
-  const onSubmit = ()=>{
-    alert('Submitted');
-  };
-
-  const onKeyUp = (e) => {
-    //13이면 enter입력의 경우임
-    if(e.keyCode === 13) {
-      onSubmit();
-    }
-  }
-
-  //let text = 'Before';
-
-  const updateText = () =>{
-    //text = 'After';
-    setText('After');
-    console.log(text); //Before임 그래서 useEffect가 필요함
+  const clickButton=()=>{
+    setButtonName('click');
   }
 
   return (
     <div className="App">
-      <input onKeyUp={onKeyUp} />
-      <button onClick = {onSubmit}>Submit</button>
-
-      <br/><br/>
-
-      <span>{text}</span>
-      <button onClick={updateText}>Update</button>
+      <h1>Kim</h1>
+      <Counter click="click1"/>
+      <Counter click={buttonName}/>
+      <Counter />
+      <button onClick={clickButton}>Click</button>
     </div>
   );
 }
