@@ -1,20 +1,41 @@
 import React, { useState } from "react";
-import Counter from "./components/Counter";
+import Movie from "./components/Movie";
+import MovieForm from "./components/MovieForm";
 
 function App() {
-  const [buttonName, setButtonName] = useState('클릭');
+  const [movies, setMovies] = useState(
+    //[{title : 'Movie1',year : 2001},{title : 'Movie2',year : 2002},{title : 'Movie3',year : 2003}]
+    []
+  );
 
-  const clickButton=()=>{
-    setButtonName('click');
-  }
+  const removeMovie = (id) =>{
+    setMovies(movies.filter(movie=>{
+      return movie.id !== id;
+    }))
+  };
+
+  const renderMovies = movies.length ? movies.map(movie => {
+    return (
+      <Movie 
+        movie={movie} 
+        key={movie.id}
+        removeMovie={removeMovie}
+      />
+    );
+  }) : '추가된 영화 없슴';
+
+  const addMovie = (movie) =>{
+    setMovies([
+      ...movies,
+      movie
+    ]);
+  };
 
   return (
     <div className="App">
-      <h1>Kim</h1>
-      <Counter click="click1"/>
-      <Counter click={buttonName}/>
-      <Counter />
-      <button onClick={clickButton}>Click</button>
+      <h1>Movie List</h1>
+      <MovieForm addMovie={addMovie}/>
+      {renderMovies}
     </div>
   );
 }
