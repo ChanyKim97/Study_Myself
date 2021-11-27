@@ -1,42 +1,30 @@
-import React, { useState } from "react";
-import Movie from "./components/Movie";
-import MovieForm from "./components/MovieForm";
+import React from "react";
+import Navbar from "./components/Navbar";
+import routes from "./routes";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
 
 function App() {
-  const [movies, setMovies] = useState(
-    //[{title : 'Movie1',year : 2001},{title : 'Movie2',year : 2002},{title : 'Movie3',year : 2003}]
-    []
-  );
-
-  const removeMovie = (id) =>{
-    setMovies(movies.filter(movie=>{
-      return movie.id !== id;
-    }))
-  };
-
-  const renderMovies = movies.length ? movies.map(movie => {
-    return (
-      <Movie 
-        movie={movie} 
-        key={movie.id}
-        removeMovie={removeMovie}
-      />
-    );
-  }) : '추가된 영화 없슴';
-
-  const addMovie = (movie) =>{
-    setMovies([
-      ...movies,
-      movie
-    ]);
-  };
-
+  
   return (
-    <div className="App">
-      <h1>Movie List</h1>
-      <MovieForm addMovie={addMovie}/>
-      {renderMovies}
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="container">
+          <Routes>
+            {routes.map(route =>{
+              return(
+                <Route key={route.path} path={route.path} exact={true} element={<route.component/>}>
+                </Route>
+              );
+            })}
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
